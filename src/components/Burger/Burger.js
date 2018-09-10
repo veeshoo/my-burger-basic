@@ -7,12 +7,9 @@ const burger = (props) => {
         .map(ing => [...Array(props.ingredients[ing])]
             .map((_, i) => <BurgerIngredient key={ing+i} type={ing} />)
         )
-        console.log(transformedIngredients);
-        // .flatMap(x => x);
-        
-        // .reduce((arr, el) => {
-        //     return arr.concat(el);
-        // }, []);
+        .reduce((arr, el) => {
+            return arr.concat(el);
+        }, []);
     
     if(transformedIngredients.length===0){
         transformedIngredients = <p>Please start adding ingredients!</p>;
